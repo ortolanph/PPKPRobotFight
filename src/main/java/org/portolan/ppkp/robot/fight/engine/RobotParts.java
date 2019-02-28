@@ -13,9 +13,9 @@ public enum RobotParts {
      */
     LINGOTS(56),
     /**
-     * Bolts parts
+     * Screws parts
      */
-    BOLTS(70),
+    SCREWS(70),
     /**
      * Coins earned
      */
@@ -28,9 +28,9 @@ public enum RobotParts {
     }
 
     /**
-     * Check if a certain amount of coins are eligible for build the robot.
+     * Check if a certain amount of certain part are eligible for build the robot.
      *
-     * @param ammount the earned coin amount
+     * @param ammount the earned certain part amount
      * @return <code>true</code> if the amount earned can be used to buy this part or <code>false</code> if not
      */
     @Contract(pure = true)

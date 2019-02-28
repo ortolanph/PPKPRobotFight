@@ -20,7 +20,7 @@ public class RobotBuilder {
     public boolean canBuild(int coils, int lingots, int bolts, int coins) {
         return COILS.checkAvailability(coils) &&
                 LINGOTS.checkAvailability(lingots) &&
-                BOLTS.checkAvailability(bolts) &&
+                SCREWS.checkAvailability(bolts) &&
                 COINS.checkAvailability(coins);
     }
 
@@ -38,7 +38,7 @@ public class RobotBuilder {
 
         partitionList.add(COILS.partition(coils));
         partitionList.add(LINGOTS.partition(lingots));
-        partitionList.add(BOLTS.partition(bolts));
+        partitionList.add(SCREWS.partition(bolts));
         partitionList.add(COINS.partition(coins));
 
         return partitionList.stream().min(Comparator.naturalOrder()).get();
