@@ -89,4 +89,17 @@ class RobotBuilderTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void shouldBuildRobotAbout25Times() {
+        int realCoils = 550;
+        int realLingots = 1445;
+        int realScrews = 5538;
+        int realCoins = 38543;
+
+        int actual = robotBuilder.maximumBuilds(realCoils, realLingots, realScrews, realCoins);
+        int expected = 25;
+
+        assertEquals(expected, actual);
+    }
 }
