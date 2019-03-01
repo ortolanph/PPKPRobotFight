@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/api/robots")
+@RestController
 public class RobotFightController {
 
     @Autowired
     private RobotFightService robotFightService;
 
-    @GetMapping("/check/{ammount}")
-    public @ResponseBody boolean checkCoils(@PathVariable("ammount") int ammount) {
-        return robotFightService.checkCoils(ammount);
+    @GetMapping("/api/robots/check/coils/{amount}")
+    public @ResponseBody boolean checkCoils(@PathVariable("amount") int amount) {
+        return robotFightService.checkCoils(amount);
     }
 
 }
