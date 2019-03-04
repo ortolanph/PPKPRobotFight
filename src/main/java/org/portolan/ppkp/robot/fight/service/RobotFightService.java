@@ -1,6 +1,8 @@
 package org.portolan.ppkp.robot.fight.service;
 
 import org.portolan.ppkp.robot.fight.engine.RobotBuilder;
+import org.portolan.ppkp.robot.fight.engine.RobotPart;
+import org.portolan.ppkp.robot.fight.parts.PartInfo;
 import org.portolan.ppkp.robot.fight.parts.RobotBuildingInfo;
 import org.portolan.ppkp.robot.fight.parts.builder.PartInfoBuilder;
 import org.springframework.stereotype.Component;
@@ -46,15 +48,25 @@ public class RobotFightService {
 
         info.billOfMaterials = new ArrayList<>();
 
-        info.billOfMaterials.add(PartInfoBuilder.buildBOMfor(COILS, coils));
-        info.billOfMaterials.add(PartInfoBuilder.buildBOMfor(LINGOTS, lingots));
-        info.billOfMaterials.add(PartInfoBuilder.buildBOMfor(SCREWS, screws));
-        info.billOfMaterials.add(PartInfoBuilder.buildBOMfor(COINS, coins));
+        info.billOfMaterials.add(buildBOMfor(COILS, coils));
+        info.billOfMaterials.add(buildBOMfor(LINGOTS, lingots));
+        info.billOfMaterials.add(buildBOMfor(SCREWS, screws));
+        info.billOfMaterials.add(buildBOMfor(COINS, coins));
 
         info.canBuild = builder.canBuild(coils, lingots, screws, coins);
         info.maximumBuilds = builder.maximumBuilds(coils, lingots, screws, coins);
         info.generatedAt = Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant());
 
         return info;
+    }
+
+    public PartInfo buildBOMfor(RobotPart part, int amount) {
+        PartInfo bomPart = new PartInfo();
+
+        bomPart.partName = part.name();
+        bomPart.required = part.getMinimum();
+        bomPart.amount = amount;
+
+        return bomPart;
     }
 }
