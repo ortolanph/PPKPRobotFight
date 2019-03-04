@@ -1,7 +1,5 @@
 package org.portolan.ppkp.robot.fight.engine;
 
-import org.jetbrains.annotations.Contract;
-
 public enum RobotParts {
 
     /**
@@ -33,7 +31,6 @@ public enum RobotParts {
      * @param ammount the earned certain part amount
      * @return <code>true</code> if the amount earned can be used to buy this part or <code>false</code> if not
      */
-    @Contract(pure = true)
     public boolean checkAvailability(int ammount) {
         return ammount >= minimum;
     }
@@ -44,7 +41,6 @@ public enum RobotParts {
      * @param amount the current player's amount
      * @return the partition between a current amount of a part and the minimum of this part
      */
-    @Contract(pure = true)
     public int partition(int amount) {
         return amount / minimum;
     }
