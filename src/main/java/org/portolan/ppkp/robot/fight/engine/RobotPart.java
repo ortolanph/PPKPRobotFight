@@ -1,6 +1,6 @@
 package org.portolan.ppkp.robot.fight.engine;
 
-public enum RobotParts {
+public enum RobotPart {
 
     /**
      * Coils parts
@@ -21,7 +21,7 @@ public enum RobotParts {
 
     private int minimum;
 
-    RobotParts(int minimum) {
+    RobotPart(int minimum) {
         this.minimum = minimum;
     }
 

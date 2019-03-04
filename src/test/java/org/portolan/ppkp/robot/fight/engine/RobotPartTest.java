@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class RobotPartsTest {
+class RobotPartTest {
 
     private static final int SUFFICIENT_COILS = 9;
     private static final int INSUFFICIENT_COILS = 8;
@@ -21,41 +21,41 @@ class RobotPartsTest {
 
     @Test
     public void coilsShouldBeSufficient() {
-        assertTrue(RobotParts.COILS.checkAvailability(SUFFICIENT_COILS));
+        assertTrue(RobotPart.COILS.checkAvailability(SUFFICIENT_COILS));
     }
 
     @Test
     public void coilsShouldBeInsufficient() {
-        assertFalse(RobotParts.COILS.checkAvailability(INSUFFICIENT_COILS));
+        assertFalse(RobotPart.COILS.checkAvailability(INSUFFICIENT_COILS));
     }
 
     @Test
     public void lingotsShouldBeSufficient() {
-        assertTrue(RobotParts.LINGOTS.checkAvailability(SUFFICIENT_LINGOTS));
+        assertTrue(RobotPart.LINGOTS.checkAvailability(SUFFICIENT_LINGOTS));
     }
 
     @Test
     public void lingotsShouldBeInsufficient() {
-        assertFalse(RobotParts.LINGOTS.checkAvailability(INSUFFICIENT_LINGOTS));
+        assertFalse(RobotPart.LINGOTS.checkAvailability(INSUFFICIENT_LINGOTS));
     }
 
     @Test
     public void screwsShouldBeSufficient() {
-        assertTrue(RobotParts.SCREWS.checkAvailability(SUFFICIENT_SCREWS));
+        assertTrue(RobotPart.SCREWS.checkAvailability(SUFFICIENT_SCREWS));
     }
 
     @Test
     public void screwsShouldBeInsufficient() {
-        assertFalse(RobotParts.SCREWS.checkAvailability(INSUFFICIENT_SCREWS));
+        assertFalse(RobotPart.SCREWS.checkAvailability(INSUFFICIENT_SCREWS));
     }
 
     @Test
     public void coinsShouldBeSufficient() {
-        assertTrue(RobotParts.COINS.checkAvailability(SUFFICIENT_COINS));
+        assertTrue(RobotPart.COINS.checkAvailability(SUFFICIENT_COINS));
     }
 
     @Test
     public void coinsShouldBeInsufficient() {
-        assertFalse(RobotParts.COINS.checkAvailability(INSUFFICIENT_COINS));
+        assertFalse(RobotPart.COINS.checkAvailability(INSUFFICIENT_COINS));
     }
 }

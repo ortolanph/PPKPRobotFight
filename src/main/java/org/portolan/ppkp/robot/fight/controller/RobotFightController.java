@@ -1,6 +1,6 @@
 package org.portolan.ppkp.robot.fight.controller;
 
-import org.portolan.ppkp.robot.fight.engine.RobotBuilder;
+import org.portolan.ppkp.robot.fight.parts.RobotBuildingInfo;
 import org.portolan.ppkp.robot.fight.service.RobotFightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,9 +11,6 @@ public class RobotFightController {
 
     @Autowired
     private RobotFightService robotFightService;
-
-    @Autowired
-    private RobotBuilder builder;
 
     @GetMapping("/check/coils/{amount}")
     public @ResponseBody boolean checkCoils(@PathVariable("amount") int amount) {
@@ -41,7 +38,7 @@ public class RobotFightController {
             @PathVariable("lingots") int lingots,
             @PathVariable("screws") int screws,
             @PathVariable("coins") int coins) {
-        return builder.canBuild(coils, lingots, screws, coins);
+        return robotFightService.canBuild(coils, lingots, screws, coins);
     }
 
     @GetMapping("/builds/coils/{coils}/lingots/{lingots}/screws/{screws}/coins/{coins}")
@@ -49,7 +46,17 @@ public class RobotFightController {
                                     @PathVariable("lingots") int lingots,
                                     @PathVariable("screws") int screws,
                                     @PathVariable("coins") int coins) {
-        return builder.maximumBuilds(coils, lingots, screws, coins);
+        return robotFightService.maximumBuilds(coils, lingots, screws, coins);
     }
+
+    @GetMapping("/info/coils/{coils}/lingots/{lingots}/screws/{screws}/coins/{coins}")
+    public @ResponseBody
+    RobotBuildingInfo retrieveInfo(@PathVariable("coils") int coils,
+                                   @PathVariable("lingots") int lingots,
+                                   @PathVariable("screws") int screws,
+                                   @PathVariable("coins") int coins) {
+        return robotFightService.detailedInfo(coils, lingots, screws,coins);
+    }
+
 
 }

@@ -1,14 +1,11 @@
 package org.portolan.ppkp.robot.fight.engine;
 
-import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import static org.portolan.ppkp.robot.fight.engine.RobotParts.*;
+import static org.portolan.ppkp.robot.fight.engine.RobotPart.*;
 
-@Component
 public class RobotBuilder {
 
     /**
