@@ -51,13 +51,6 @@ public class RobotFightService {
         info.billOfMaterials.add(PartInfoBuilder.buildBOMfor(SCREWS, screws));
         info.billOfMaterials.add(PartInfoBuilder.buildBOMfor(COINS, coins));
 
-        info.partitionList = new ArrayList<>();
-
-        info.partitionList.add(PartInfoBuilder.buildPartitionfor(COILS, coils));
-        info.partitionList.add(PartInfoBuilder.buildPartitionfor(LINGOTS, lingots));
-        info.partitionList.add(PartInfoBuilder.buildPartitionfor(SCREWS, screws));
-        info.partitionList.add(PartInfoBuilder.buildPartitionfor(COINS, coins));
-
         info.canBuild = builder.canBuild(coils, lingots, screws, coins);
         info.maximumBuilds = builder.maximumBuilds(coils, lingots, screws, coins);
         info.generatedAt = Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant());

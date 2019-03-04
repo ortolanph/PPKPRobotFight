@@ -15,14 +15,4 @@ public class PartInfoBuilder {
         return bomPart;
     }
 
-    public static PartInfo buildPartitionfor(RobotPart part, int amount) {
-        PartInfo bomPart = new PartInfo();
-
-        bomPart.partName = part.name();
-        bomPart.required = part.getMinimum();
-        bomPart.amount = part.partition(amount);
-
-        return bomPart;
-    }
-
 }
