@@ -28,11 +28,11 @@ public enum RobotParts {
     /**
      * Check if a certain amount of certain part are eligible for build the robot.
      *
-     * @param ammount the earned certain part amount
+     * @param amount the earned certain part amount
      * @return <code>true</code> if the amount earned can be used to buy this part or <code>false</code> if not
      */
-    public boolean checkAvailability(int ammount) {
-        return ammount >= minimum;
+    public boolean checkAvailability(int amount) {
+        return amount >= minimum;
     }
 
     /**
@@ -43,5 +43,9 @@ public enum RobotParts {
      */
     public int partition(int amount) {
         return amount / minimum;
+    }
+
+    public int getMinimum() {
+        return minimum;
     }
 }
