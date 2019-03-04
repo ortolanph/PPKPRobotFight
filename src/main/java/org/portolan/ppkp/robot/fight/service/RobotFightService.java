@@ -4,7 +4,6 @@ import org.portolan.ppkp.robot.fight.engine.RobotBuilder;
 import org.portolan.ppkp.robot.fight.engine.RobotPart;
 import org.portolan.ppkp.robot.fight.parts.PartInfo;
 import org.portolan.ppkp.robot.fight.parts.RobotBuildingInfo;
-import org.portolan.ppkp.robot.fight.parts.builder.PartInfoBuilder;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
