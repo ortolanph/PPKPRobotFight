@@ -4,7 +4,7 @@ import org.portolan.ppkp.robot.fight.engine.RobotBuilder;
 import org.portolan.ppkp.robot.fight.engine.RobotPart;
 import org.portolan.ppkp.robot.fight.parts.PartInfo;
 import org.portolan.ppkp.robot.fight.parts.RobotBuildingInfo;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -13,7 +13,7 @@ import java.util.Date;
 
 import static org.portolan.ppkp.robot.fight.engine.RobotPart.*;
 
-@Component
+@Service
 public class RobotFightService {
 
     private RobotBuilder builder = new RobotBuilder();
