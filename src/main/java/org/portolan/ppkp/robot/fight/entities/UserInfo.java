@@ -1,11 +1,13 @@
 package org.portolan.ppkp.robot.fight.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
+@Table(name = "USER_INFO")
 public class UserInfo {
 
     @Id

@@ -28,7 +28,7 @@ public class PPKPUserInterceptor extends HandlerInterceptorAdapter {
         userInfo.setCountry("DEFAULT");
         userInfo.setLastAccess(new Date());
         userInfo.setAccessCount(1);
-        userInfo.setPath(request.getContextPath());
+        userInfo.setPath(request.getRequestURL().toString());
 
         userInfoService.saveUserInfo(userInfo);
 
