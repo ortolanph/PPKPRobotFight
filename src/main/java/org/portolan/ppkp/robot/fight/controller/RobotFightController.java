@@ -13,27 +13,32 @@ public class RobotFightController {
     private RobotFightService robotFightService;
 
     @GetMapping("/check/coils/{amount}")
-    public @ResponseBody boolean checkCoils(@PathVariable("amount") int amount) {
+    public @ResponseBody
+    boolean checkCoils(@PathVariable("amount") int amount) {
         return robotFightService.checkCoils(amount);
     }
 
     @GetMapping("/check/lingots/{amount}")
-    public @ResponseBody boolean checkLingots(@PathVariable("amount") int amount) {
+    public @ResponseBody
+    boolean checkLingots(@PathVariable("amount") int amount) {
         return robotFightService.checkLingots(amount);
     }
 
     @GetMapping("/check/screws/{amount}")
-    public @ResponseBody boolean checkScrews(@PathVariable("amount") int amount) {
+    public @ResponseBody
+    boolean checkScrews(@PathVariable("amount") int amount) {
         return robotFightService.checkScrews(amount);
     }
 
     @GetMapping("/check/coins/{amount}")
-    public @ResponseBody boolean checkCoins(@PathVariable("amount") int amount) {
+    public @ResponseBody
+    boolean checkCoins(@PathVariable("amount") int amount) {
         return robotFightService.checkCoins(amount);
     }
 
     @GetMapping("/check/coils/{coils}/lingots/{lingots}/screws/{screws}/coins/{coins}")
-    public @ResponseBody boolean checkAll(
+    public @ResponseBody
+    boolean checkAll(
             @PathVariable("coils") int coils,
             @PathVariable("lingots") int lingots,
             @PathVariable("screws") int screws,
@@ -42,10 +47,11 @@ public class RobotFightController {
     }
 
     @GetMapping("/builds/coils/{coils}/lingots/{lingots}/screws/{screws}/coins/{coins}")
-    public @ResponseBody int builds(@PathVariable("coils") int coils,
-                                    @PathVariable("lingots") int lingots,
-                                    @PathVariable("screws") int screws,
-                                    @PathVariable("coins") int coins) {
+    public @ResponseBody
+    int builds(@PathVariable("coils") int coils,
+               @PathVariable("lingots") int lingots,
+               @PathVariable("screws") int screws,
+               @PathVariable("coins") int coins) {
         return robotFightService.maximumBuilds(coils, lingots, screws, coins);
     }
 
@@ -55,7 +61,7 @@ public class RobotFightController {
                                    @PathVariable("lingots") int lingots,
                                    @PathVariable("screws") int screws,
                                    @PathVariable("coins") int coins) {
-        return robotFightService.detailedInfo(coils, lingots, screws,coins);
+        return robotFightService.detailedInfo(coils, lingots, screws, coins);
     }
 
 

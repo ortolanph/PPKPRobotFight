@@ -13,7 +13,7 @@ public class RobotBuilder {
      *
      * @param coils   the amount of coils
      * @param lingots the amount of lingots
-     * @param screws   the amount of screws
+     * @param screws  the amount of screws
      * @param coins   the coins earned
      * @return <code>true</code> if the robot can be built or <code>false</code>
      */
@@ -29,7 +29,7 @@ public class RobotBuilder {
      *
      * @param coils   the amount of coils
      * @param lingots the amount of lingots
-     * @param screws   the amount of bolts
+     * @param screws  the amount of bolts
      * @param coins   the coins earned
      * @return the number of times that the robot can be built
      */

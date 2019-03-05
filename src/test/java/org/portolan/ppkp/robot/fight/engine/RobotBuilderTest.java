@@ -1,22 +1,22 @@
 package org.portolan.ppkp.robot.fight.engine;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class RobotBuilderTest {
 
-    private RobotBuilder robotBuilder;
-
     public static final int MINIMUM_COILS = 9;
     public static final int MINIMUM_LINGOTS = 56;
     public static final int MINIMUM_SCREWS = 70;
     public static final int MINIMUM_COINS = 1000;
-
     private static final int ONE_TIME = 1;
     private static final int TWO_TIMES = 2;
     private static final int TEN_TIMES = 10;
     private static final int NO_TIME = 0;
+    private RobotBuilder robotBuilder;
 
     @BeforeEach
     public void setUp() {
