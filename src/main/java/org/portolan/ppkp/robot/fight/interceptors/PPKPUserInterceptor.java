@@ -26,23 +26,10 @@ public class PPKPUserInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        UserInfo userInfo = new UserInfo();
+        boolean userValidated = userInfoService.validateUserAccess(request.getRemoteAddr());
 
-        userInfo.setIp(request.getRemoteAddr());
-        userInfo.setCountry("DEFAULT");
-        userInfo.setLastAccess(new Date());
-        userInfo.setAccessCount(1);
-        userInfo.setPath(request.getRequestURL().toString());
-
-        userInfoService.saveUserInfo(userInfo);
-
-        LOGGER.info(String.format("preHandle: %s", userInfo.toString()));
+        
 
         return super.preHandle(request, response, handler);
-    }
-
-    @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        super.postHandle(request, response, handler, modelAndView);
     }
 }
