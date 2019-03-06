@@ -3,5 +3,5 @@
 source environments/development.conf
 
 java -Dserver.port=$PORT \
-     -Dspring.profiles.active=$PROFILE-jar \
+     -Dspring.profiles.active=$PROFILE \
      -jar $JAR_LOCATION/$JAR_FILE
