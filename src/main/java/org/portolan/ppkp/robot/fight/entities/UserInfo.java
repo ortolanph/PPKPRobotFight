@@ -21,9 +21,6 @@ public class UserInfo {
     @Column(name = "last_access")
     private Date lastAccess;
 
-    @Column(name = "access_count")
-    private int accessCount;
-
     @Column(name = "path", length = 255)
     private String path;
 
@@ -59,14 +56,6 @@ public class UserInfo {
         this.lastAccess = lastAccess;
     }
 
-    public int getAccessCount() {
-        return accessCount;
-    }
-
-    public void setAccessCount(int accessCount) {
-        this.accessCount = accessCount;
-    }
-
     public String getPath() {
         return path;
     }
@@ -82,7 +71,6 @@ public class UserInfo {
                 .append(", ip='").append(ip).append('\'')
                 .append(", country='").append(country).append('\'')
                 .append(", lastAccess=").append(lastAccess)
-                .append(", accessCount=").append(accessCount)
                 .append(", path='").append(path).append('\'')
                 .append('}')
                 .toString();

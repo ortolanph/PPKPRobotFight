@@ -26,7 +26,7 @@ public class PPKPUserInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        boolean userValidated = userInfoService.validateUserAccess(request.getRemoteAddr());
+        boolean userValidated = userInfoService.validateUserAccess(request.getRemoteAddr(),request.getRequestURL().toString());
 
         
 
