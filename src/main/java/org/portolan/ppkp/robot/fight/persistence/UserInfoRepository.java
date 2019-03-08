@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserInfoRepository extends JpaRepository<UserInfo, Long> {
 
-  @Query(value = "select count(*) where ", nativeQuery = true)
+  @Query("select count(u) from UserInfo u where u.ip = :ip")
   int todayAccesses(String ip);
 
 }
