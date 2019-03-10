@@ -17,21 +17,19 @@ public class UserInfoService {
     @Autowired
     private Environment environment;
 
-    public void saveUserInfo(UserInfo userInfo) {
-        repository.save(userInfo);
-    }
-
     public boolean validateUserAccess(String ip, String path) {
         int accesses = repository.todayAccesses(ip);
         int maxAccesses = Integer.parseInt(environment.getProperty("daily.accessCount"));
 
-        if(accesses <= maxAccesses) {
+        if(accesses < maxAccesses) {
             UserInfo userInfo = new UserInfo();
 
             userInfo.setIp(ip);
             userInfo.setCountry("DEFAULT");
             userInfo.setLastAccess(new Date());
             userInfo.setPath(path);
+
+            repository.save(userInfo);
 
             return true;
         } else {

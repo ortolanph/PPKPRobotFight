@@ -28,7 +28,10 @@ public class PPKPUserInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         boolean userValidated = userInfoService.validateUserAccess(request.getRemoteAddr(),request.getRequestURL().toString());
 
-        
+        if(!userValidated) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            return false;
+        }
 
         return super.preHandle(request, response, handler);
     }
