@@ -12,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class PPKPUserInterceptorConfig implements WebMvcConfigurer {
 
+    private static final String EXCLUDE_ADMIN = "exclude.admin.path";
     @Autowired
     private Environment environment;
 
@@ -19,8 +20,6 @@ public class PPKPUserInterceptorConfig implements WebMvcConfigurer {
     public PPKPUserInterceptor userInterceptor() {
         return new PPKPUserInterceptor();
     }
-
-    private static final String EXCLUDE_ADMIN = "exclude.admin.path";
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

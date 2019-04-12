@@ -3,8 +3,8 @@ package org.portolan.ppkp.robot.fight.service;
 import org.portolan.ppkp.robot.fight.entities.UserInfo;
 import org.portolan.ppkp.robot.fight.persistence.UserInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
@@ -21,7 +21,7 @@ public class UserInfoService {
         int accesses = repository.todayAccesses(ip);
         int maxAccesses = Integer.parseInt(environment.getProperty("daily.accessCount"));
 
-        if(accesses < maxAccesses) {
+        if (accesses < maxAccesses) {
             UserInfo userInfo = new UserInfo();
 
             userInfo.setIp(ip);
